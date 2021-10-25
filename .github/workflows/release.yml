@@ -30,4 +30,4 @@ jobs:
           publish_path: '${{ secrets.PUBLISH_PATH }}'
           ssh_user: '${{ secrets.SSH_USERNAME }}'
           ssh_password: '${{ secrets.SSH_PASSWORD }}'
-        run: sshpass -p "${{ ssh_password }}" scp -r ${{ ssh_user }}@${{ host }}:${{ publish_path }} ${{ local_publish_folder }}
+        run: sshpass -p "${{ env.ssh_password }}" scp -r ${{ env.ssh_user }}@${{ env.host }}:${{ env.publish_path }} ${{ env.local_publish_folder }}
