@@ -10,10 +10,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
+    environment: MAKALE
     env:
       local_publish_folder: publish
-
     steps:
       - uses: actions/checkout@v2
       
@@ -27,8 +26,8 @@ jobs:
         
       - name: Publish
         env:
-          host: ${{ secrets.MAKALE_SSH_HOST }}
-          publish_path: ${{ secrets.MAKALE_PUBLISH_PATH }}
-          ssh_user: ${{ secrets.MAKALE_SSH_USERNAME }}
-          ssh_password: ${{ secrets.MAKALE_SSH_PASSWORD }}
+          host: '${{ secrets.SSH_HOST }}'
+          publish_path: '${{ secrets.PUBLISH_PATH }}'
+          ssh_user: '${{ secrets.SSH_USERNAME }}'
+          ssh_password: '${{ secrets.SSH_PASSWORD }}'
         run: sshpass -p "${{ ssh_password }}" scp -r ${{ ssh_user }}@${{ host }}:${{ publish_path }} ${{ local_publish_folder }}
