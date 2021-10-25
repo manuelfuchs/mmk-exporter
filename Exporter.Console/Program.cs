@@ -8,6 +8,7 @@ namespace Exporter
         {
             Console.WriteLine("test1@tempr.email");
             Console.WriteLine("test2@tempr.email");
+            Console.WriteLine("test3@tempr.email");
         }
     }
 }
