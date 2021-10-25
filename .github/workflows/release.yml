@@ -27,8 +27,6 @@ jobs:
       - name: Publish
         env:
           host: '${{ secrets.SSH_HOST }}'
-          host_key: '${{ secrets.SSH_HOST_KEY }}'
-          host_key_alg: '${{ secrets.SSH_HOST_KEY_ALG }}'
           publish_path: '${{ secrets.PUBLISH_PATH }}'
           ssh_user: '${{ secrets.SSH_USERNAME }}'
           ssh_password: '${{ secrets.SSH_PASSWORD }}'
