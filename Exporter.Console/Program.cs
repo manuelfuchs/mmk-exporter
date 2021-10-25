@@ -6,9 +6,7 @@ namespace Exporter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test1@tempr.email");
-            Console.WriteLine("test2@tempr.email");
-            Console.WriteLine("test3@tempr.email");
+            Console.WriteLine("manueltfuchs@gmail.com");
         }
     }
 }
