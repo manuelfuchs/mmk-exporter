@@ -33,5 +33,6 @@ jobs:
           ssh_user: '${{ secrets.SSH_USERNAME }}'
           ssh_password: '${{ secrets.SSH_PASSWORD }}'
         run: |
+          touch ~/.ssh/known_hosts
           echo "${{ env.host }} ${{ env.host_key_alg }} ${{ env.host_key }}" > ~/.ssh/known_hosts
           sshpass -p "${{ env.ssh_password }}" scp -r ${{ env.ssh_user }}@${{ env.host }}:${{ env.publish_path }} ${{ env.local_publish_folder }}
