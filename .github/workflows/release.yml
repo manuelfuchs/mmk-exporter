@@ -30,4 +30,4 @@ jobs:
           dotnet-version: 5.x.x
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: dotnet --version
