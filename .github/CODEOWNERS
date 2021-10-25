@@ -1,0 +1,3 @@
+# set manuelfuchs as default owner of all files in the repository, automatically requiring a review
+# on a potential pull request.
+* @manuelfuchs
