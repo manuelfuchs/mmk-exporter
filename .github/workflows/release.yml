@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      publish_folder: publish
+      local_publish_folder: publish
 
     steps:
       - uses: actions/checkout@v2
@@ -23,8 +23,12 @@ jobs:
           dotnet-version: 5.x.x
 
       - name: Build
-        run: dotnet publish /p:PublishSingleFile=true --framework net5.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.publish_folder }}
+        run: dotnet publish /p:PublishSingleFile=true --framework net5.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.local_publish_folder }}
         
       - name: Publish
-        run: |
-          scp help
+        env:
+          host: ${{ secrets.MAKALE_SSH_HOST }}
+          publish_path: ${{ secrets.MAKALE_PUBLISH_PATH }}
+          ssh_user: ${{ secrets.MAKALE_SSH_USERNAME }}
+          ssh_password: ${{ secrets.MAKALE_SSH_PASSWORD }}
+        run: sshpass -p "${{ ssh_password }}" scp -r ${{ ssh_user }}@${{ host }}:${{ publish_path }} ${{ local_publish_folder }}
