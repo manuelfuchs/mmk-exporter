@@ -7,7 +7,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: MAKALE
+    environment: Uberspace
     env:
       local_publish_folder: publish
     steps:
