@@ -24,3 +24,7 @@ jobs:
 
       - name: Build
         run: dotnet publish /p:PublishSingleFile=true --framework net5.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.publish_folder }}
+        
+      - name: Publish
+        run: |
+          scp help
