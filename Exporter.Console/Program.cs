@@ -7,6 +7,7 @@ namespace Exporter
         static void Main(string[] args)
         {
             Console.WriteLine("manueltfuchs@gmail.com");
+            throw new ArgumentException("Simulated error");
         }
     }
 }
