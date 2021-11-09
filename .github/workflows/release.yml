@@ -19,7 +19,7 @@ jobs:
           dotnet-version: 6.x.x
 
       - name: Build
-        run: dotnet publish /p:PublishSingleFile=true --framework net5.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.local_publish_folder }}
+        run: dotnet publish /p:PublishSingleFile=true --framework net6.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.local_publish_folder }}
         
       - name: Publish
         env:
