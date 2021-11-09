@@ -16,7 +16,7 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1.8.2
         with:
-          dotnet-version: 5.x.x
+          dotnet-version: 6.x.x
 
       - name: Build
         run: dotnet publish /p:PublishSingleFile=true --framework net5.0 --self-contained --runtime linux-x64 --configuration release --output ${{ env.local_publish_folder }}
